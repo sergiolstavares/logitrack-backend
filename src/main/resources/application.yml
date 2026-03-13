@@ -22,7 +22,7 @@ server:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:logitrack-super-secret-key-for-jwt-signing-minimum-256-bits}
+    secret: ${JWT_SECRET:logitrack}
     expiration: ${JWT_EXPIRATION:86400000}
 
 logging:
