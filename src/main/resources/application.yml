@@ -22,7 +22,7 @@ server:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:logitrack}
+    secret: ${JWT_SECRET:logitrack-super-secret-key-minimum-32-chars-ok}
     expiration: ${JWT_EXPIRATION:86400000}
 
 logging:
