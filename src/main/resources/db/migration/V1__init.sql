@@ -44,8 +44,8 @@ CREATE TABLE manutencoes (
 
 -- Usuário admin padrão (senha: admin123)
 INSERT INTO usuarios (nome, email, senha, role) VALUES
-('Administrador', 'admin@logitrack.com', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6ImFkbWluMTIzIn0.Bem6_f4v5c3c1FfA9yqesQHbuC_uTh-r_VXn_W7TXic', 'ADMIN'),
-('Gestor', 'gestor@logitrack.com', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6ImFkbWluMTIzIn0.Bem6_f4v5c3c1FfA9yqesQHbuC_uTh-r_VXn_W7TXic', 'USER');
+('Administrador', 'admin@logitrack.com', '$2a$12$Z5c.bb0qH1x.Pw32F/H65eYJCCSjk6pnLDbxKDVgDYIKiz9rxPBhm', 'ADMIN'),
+('Gestor', 'gestor@logitrack.com', '$2a$12$Z5c.bb0qH1x.Pw32F/H65eYJCCSjk6pnLDbxKDVgDYIKiz9rxPBhm', 'USER');
 
 -- Veículos
 INSERT INTO veiculos (placa, modelo, tipo, ano) VALUES
