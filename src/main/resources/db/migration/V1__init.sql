@@ -2,7 +2,7 @@
 
 -- 1. Tabela de Usuários (para autenticação JWT)
 CREATE TABLE usuarios (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(150) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE usuarios (
 
 -- 2. Tabela de Veículos
 CREATE TABLE veiculos (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     placa VARCHAR(10) UNIQUE NOT NULL,
     modelo VARCHAR(50) NOT NULL,
     tipo VARCHAR(20) CHECK (tipo IN ('LEVE', 'PESADO')),
@@ -22,7 +22,7 @@ CREATE TABLE veiculos (
 
 -- 3. Tabela de Viagens
 CREATE TABLE viagens (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     veiculo_id INTEGER REFERENCES veiculos(id) ON DELETE CASCADE,
     data_saida TIMESTAMP NOT NULL,
     data_chegada TIMESTAMP,
@@ -33,7 +33,7 @@ CREATE TABLE viagens (
 
 -- 4. Tabela de Manutenções
 CREATE TABLE manutencoes (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     veiculo_id INTEGER REFERENCES veiculos(id) ON DELETE CASCADE,
     data_inicio DATE NOT NULL,
     data_finalizacao DATE,
