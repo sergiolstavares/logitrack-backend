@@ -43,13 +43,13 @@ API REST desenvolvida com **Spring Boot 3** + **Java 17** para o sistema de gest
 ### Pré-requisitos
 - Java 17+
 - Maven 3.9+
-- PostgreSQL 15+ rodando localmente
+- PostgreSQL 16
 
 ### Configurar banco
 
 ```sql
 CREATE DATABASE logitrack;
-CREATE USER logitrack WITH PASSWORD 'logitrack123';
+CREATE USER logitrack WITH PASSWORD 'logitrack';
 GRANT ALL PRIVILEGES ON DATABASE logitrack TO logitrack;
 ```
 
@@ -58,10 +58,10 @@ GRANT ALL PRIVILEGES ON DATABASE logitrack TO logitrack;
 Crie um arquivo `.env` (ou export no shell):
 
 ```bash
-export DB_URL=jdbc:postgresql://localhost:5432/logitrack
+export DB_URL=jdbc:postgresql://postgres:5432/logitrack
 export DB_USER=logitrack
-export DB_PASSWORD=logitrack123
-export JWT_SECRET=sua-chave-secreta-com-pelo-menos-256-bits
+export DB_PASSWORD=logitrack
+export JWT_SECRET=logitrack-super-secret-key-minimum-32-chars-ok
 export JWT_EXPIRATION=86400000
 ```
 
@@ -71,7 +71,7 @@ export JWT_EXPIRATION=86400000
 mvn clean spring-boot:run
 ```
 
-A API estará disponível em `http://localhost:8080`.
+A API estará disponível em `http://slst.com.br:8085`.
 
 O Flyway criará as tabelas automaticamente e inserirá os dados seed na primeira execução.
 
@@ -82,12 +82,7 @@ O Flyway criará as tabelas automaticamente e inserirá os dados seed na primeir
 | admin@logitrack.com | admin123 | ADMIN |
 | gestor@logitrack.com | admin123 | USER |
 
-## Build para produção
 
-```bash
-mvn clean package -DskipTests
-java -jar target/logitrack-backend-1.0.0.jar
-```
 
 ## Decisões técnicas
 
